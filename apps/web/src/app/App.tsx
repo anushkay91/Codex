@@ -859,12 +859,13 @@ function Login() {
         <form onSubmit={handleSubmit(onSubmit)}>
           {isRegistering && (
             <>
-              <input placeholder="Full Name" {...register("fullName", { required: true })} style={{ background: "#111415", color: "#ecf3f1", border: "1px solid #343c3c", borderRadius: "8px", padding: "10px" }} />
-              <input placeholder="Organization/Company Name" {...register("orgName", { required: true })} style={{ background: "#111415", color: "#ecf3f1", border: "1px solid #343c3c", borderRadius: "8px", padding: "10px" }} />
+              <input placeholder="Full Name" {...register("fullName", { required: isRegistering })} style={{ background: "#111415", color: "#ecf3f1", border: "1px solid #343c3c", borderRadius: "8px", padding: "10px" }} />
+              <input placeholder="Organization/Company Name" {...register("orgName", { required: isRegistering })} style={{ background: "#111415", color: "#ecf3f1", border: "1px solid #343c3c", borderRadius: "8px", padding: "10px" }} />
             </>
           )}
           <input placeholder="Work Email" type="email" {...register("email", { required: true })} style={{ background: "#111415", color: "#ecf3f1", border: "1px solid #343c3c", borderRadius: "8px", padding: "10px" }} />
           <input placeholder="Password" type="password" {...register("password", { required: true })} style={{ background: "#111415", color: "#ecf3f1", border: "1px solid #343c3c", borderRadius: "8px", padding: "10px" }} />
+          {isRegistering && <span style={{ fontSize: "11px", color: "#8d9996", marginTop: "-5px", marginBottom: "5px", display: "block" }}>Password must be at least 10 characters long.</span>}
           {loginMutation.error && <p className="error">{loginMutation.error.message}</p>}
           {registerMutation.error && <p className="error">{registerMutation.error.message}</p>}
           <button className="primary" type="submit" disabled={loginMutation.isPending || registerMutation.isPending}>
