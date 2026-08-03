@@ -1,4 +1,4 @@
-const API_BASE = (import.meta as any).env?.VITE_API_URL ?? "http://localhost:8000/api/v1";
+const API_BASE = (import.meta as any).env?.VITE_API_URL ?? "/api/v1";
 
 export type Dashboard = { revenue_paise: number; tax_collected_paise: number; outstanding_paise: number; low_stock_count: number };
 export type AgentRun = { id: string; status: string; current_node: string | null; summary: string | null };
