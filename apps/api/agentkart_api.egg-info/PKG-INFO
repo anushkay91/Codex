@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: agentkart-api
+Version: 0.1.0
+Summary: AgentKart AI backend
+Requires-Python: >=3.12
+Requires-Dist: alembic<2,>=1.14
+Requires-Dist: email-validator<3,>=2.2
+Requires-Dist: fastapi<1,>=0.115
+Requires-Dist: langgraph<1,>=0.2
+Requires-Dist: openai<3,>=1.0
+Requires-Dist: pandas<4,>=2.2
+Requires-Dist: Pillow<12,>=10
+Requires-Dist: PyMuPDF<2,>=1.24
+Requires-Dist: pytesseract<1,>=0.3.13
+Requires-Dist: python-multipart<1,>=0.0.20
+Requires-Dist: pydantic-settings<3,>=2.6
+Requires-Dist: pwdlib[argon2]<1,>=0.2
+Requires-Dist: PyJWT<3,>=2.10
+Requires-Dist: sqlalchemy<3,>=2.0
+Requires-Dist: uvicorn[standard]<1,>=0.32
+Provides-Extra: dev
+Requires-Dist: httpx<1,>=0.28; extra == "dev"
+Requires-Dist: pytest<9,>=8.3; extra == "dev"
+Requires-Dist: ruff<1,>=0.8; extra == "dev"

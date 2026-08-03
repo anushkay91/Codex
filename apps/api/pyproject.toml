@@ -1,0 +1,43 @@
+[project]
+name = "agentkart-api"
+version = "0.1.0"
+description = "AgentKart AI backend"
+requires-python = ">=3.12"
+dependencies = [
+  "alembic>=1.14,<2",
+  "email-validator>=2.2,<3",
+  "fastapi>=0.115,<1",
+  "langgraph>=0.2,<1",
+  "openai>=1.0,<3",
+  "pandas>=2.2,<4",
+  "Pillow>=10,<12",
+  "PyMuPDF>=1.24,<2",
+  "pytesseract>=0.3.13,<1",
+  "python-multipart>=0.0.20,<1",
+  "pydantic-settings>=2.6,<3",
+  "pwdlib[argon2]>=0.2,<1",
+  "PyJWT>=2.10,<3",
+  "sqlalchemy>=2.0,<3",
+  "uvicorn[standard]>=0.32,<1",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+exclude = ["alembic*"]
+
+[project.optional-dependencies]
+dev = ["httpx>=0.28,<1", "pytest>=8.3,<9", "ruff>=0.8,<1"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
